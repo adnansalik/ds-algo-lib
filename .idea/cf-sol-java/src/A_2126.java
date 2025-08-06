@@ -3,7 +3,7 @@ import java.util.Scanner;
 
 public class A_2126 {
     public static void main(String[] args) {
-
+        // sample comment
         Scanner sc = new Scanner(System.in);
         int t = sc.nextInt();
         for (int i=0;i<t;i++){
