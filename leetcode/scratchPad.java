@@ -1,24 +1,39 @@
-import java.util.Scanner;
+import java.util.*;
 
 public class scratchPad {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int x = sc.nextInt();
-        System.out.println(isPalindrome(x));
+        int n1 = sc.nextInt();
+        int n2 = sc.nextInt();
+        System.out.println(gcd(n1,n2));
     }
 
-    static boolean isPalindrome(int x) {
-        int originalNum = x;
-        int rev = 0;
-        if(x<0){
-            return false;
+    static int gcd(int n1,int n2){
+
+        ArrayList <Integer> aL1 = new ArrayList<>();
+        ArrayList<Integer> aL2 =  new ArrayList<>();
+        for (int i = 1; i <= n1; i++) {
+            if(n1%i == 0){
+                aL1.add(i);
+            }
         }
-        while(x!=0){
-            int lastDig = x%10;
-            rev = rev*10 + lastDig;
-            x = x/10;
+        for (int i = 1; i <= n2; i++) {
+            if(n2%i == 0){
+                aL2.add(i);
+            }
         }
-        System.out.println(rev);
-        return rev==originalNum;
+        ArrayList<Integer> aL3 = new ArrayList<>();
+        for(int element : aL1){
+            Collections.sort(aL2);
+            int searchIndex = Collections.binarySearch(aL2,element);
+            if(searchIndex > -1){
+                aL3.add(aL2.get(searchIndex));
+            }
+        }
+        aL3.sort((o1,o2) -> {
+            return o2-o1;
+        });
+
+        return aL3.getFirst();
     }
 }
