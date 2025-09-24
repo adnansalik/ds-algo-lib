@@ -9,3 +9,4 @@ Files are organised in various directories
 
     - cpp_template: only one file which contians my cpp template from ancient times lol
     - cf-sol-java: this contains contest-wise solutions on code forces
+    - leetcode: this contains leetcode stuff (problems solutions mostly)
